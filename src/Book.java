@@ -17,15 +17,23 @@ public class Book {
 
     //TO DO: metod loanBook = tillgänglig bok eller ej? true/false
     //TO DO: metod returnBook = när bok lämnas tillbaka, ändra tillgänglighet till true
-    //TO DO: getter & setter för availability
-    //TO DO: metod lägga till bok
+    //TO DO: getter & setter för availability??
 
-    public String toString() {
+    public String toString(){
         return "Title: " + this.name +
                 "\nAuthor: " + this.author +
                 "\nPublication year: " + this.year +
                 "\nVolume: " + this.version +
                 "\nAvailable: " + this.available + "\n";
+    }
+
+    public boolean returnBook() {
+        // kolla om boken ej är tillgänglig, och är det så ändras allt till true
+        if(!available) {
+            this.available = true;
+            return true;
+        }
+        return false;
     }
 
     public String getName() {
