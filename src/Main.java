@@ -79,7 +79,7 @@ public class Main {
                     break;
 
                 case 5: // Quit
-                    break;
+                    return;
 
                 default:
                     System.out.println("Invalid choice, please try again.");
