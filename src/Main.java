@@ -50,11 +50,16 @@ public class Main {
                     break;
 
                 case 3: // List all available books
+                    for (Book books : allBooks) {
+                        if (!books.getAvailable()) {
+                            System.out.println(books);
+                        }
+                    }
                     break;
 
                 case 4: // Return a book
                     break;
-                    
+
                 case 5:  //loan book
 
                 case 6: // Quit

@@ -69,10 +69,10 @@ public class Book {
     }
 
     public String toString() {
-        return "Title: " + this.name +
-                "\nAuthor: " + this.author +
-                "\nPublication year: " + this.year +
-                "\nVolume: " + this.version +
-                "\nAvailable: " + this.available + "\n";
+        return "  " + this.name.toUpperCase() +
+                "\n| Author: " + this.author +
+                "\n| Publication: " + this.year +
+                "\n| Edition: " + this.version +
+                "\n| Available: " + this.available + "\n";
     }
 }
