@@ -15,25 +15,17 @@ public class Book {
         this.available = true;
     }
 
-    //TO DO: metod loanBook = tillgänglig bok eller ej? true/false
-    //TO DO: metod returnBook = när bok lämnas tillbaka, ändra tillgänglighet till true
-    //TO DO: getter & setter för availability??
-
-    public String toString(){
-        return "Title: " + this.name +
-                "\nAuthor: " + this.author +
-                "\nPublication year: " + this.year +
-                "\nVolume: " + this.version +
-                "\nAvailable: " + this.available + "\n";
+    public boolean loanBook() {
+        return false;
     }
 
-    public boolean returnBook() {
-        // kolla om boken ej är tillgänglig, och är det så ändras allt till true
-        if(!available) {
+    public void returnBook() {
+        if (!available) {
             this.available = true;
-            return true;
+            System.out.println("Your book is returned, thank you!");
         }
-        return false;
+        System.out.println("Something wet wrong, try again.");
+        ;
     }
 
     public String getName() {
@@ -66,5 +58,21 @@ public class Book {
 
     public void setVersion(double version) {
         this.version = version;
+    }
+
+    public boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public String toString() {
+        return "Title: " + this.name +
+                "\nAuthor: " + this.author +
+                "\nPublication year: " + this.year +
+                "\nVolume: " + this.version +
+                "\nAvailable: " + this.available + "\n";
     }
 }
