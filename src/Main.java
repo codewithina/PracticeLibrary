@@ -44,25 +44,41 @@ public class Main {
                     String searchName = sc.nextLine();
                     for (Book books : allBooks) {
                         if (books.getName().contains(searchName)) {
-                            System.out.println(books.toString());
+                            System.out.println("\n" + books.toString());
+                            System.out.println("Enter YES if you want to loan this book, otherwise enter NO.");
+                            String loanBook = sc.nextLine();
+                            if (loanBook.equalsIgnoreCase("yes")) {
+                                books.setAvailable(false);
+                                System.out.println("The book is now loaned, happy reading!");
+                            } else if (loanBook.equalsIgnoreCase("no")) {
+                                System.out.println("OK, choose what you want to do in the menu.\n");
+                            } else {
+                                System.out.println("Invalid input, try again.\n");
+                            }
                         }
                     }
                     break;
 
                 case 3: // List all available books
                     for (Book books : allBooks) {
-                        if (!books.getAvailable()) {
+                        if (books.getAvailable()) {
                             System.out.println(books);
                         }
                     }
                     break;
 
                 case 4: // Return a book
+                    System.out.println("What book do you want to return?");
+                    String returnName = sc.nextLine();
+                    for (Book books : allBooks) {
+                        if (books.getName().contains(returnName)) {
+                            books.setAvailable(true);
+                            System.out.println("Boken är nu återlämnad, tack! \n");
+                        }
+                    }
                     break;
 
-                case 5:  //loan book
-
-                case 6: // Quit
+                case 5: // Quit
                     break;
 
                 default:
