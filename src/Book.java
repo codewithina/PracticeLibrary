@@ -15,8 +15,8 @@ public class Book {
         this.available = true;
     }
 
-    public boolean loanBook() {
-        return false;
+    public void loanBook() {
+        this.available = false;
     }
 
     public void returnBook() {
