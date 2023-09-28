@@ -32,7 +32,7 @@ public class Library {
         double version = sc.nextDouble();
         Book a = new Book(name, author, year, version);
         allBooks.add(a);
-        sc.nextLine();
+
     }
 
     public void searchBook() {
